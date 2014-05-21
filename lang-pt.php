@@ -1,18 +1,18 @@
 <?php
 
 $msg['page_title']		= 'Encontro vocacional do Caminho Neocatecumenal – retransmissão em vivo';
-$msg['meta_content']	= 'Retransmissão em vivo do encontro nvocacional de jovens do Caminho Neocatecumenal com motivo da JMJ Rio 2013. Kiko Argüello.';
-$msg['meta_site_name']	= 'Rio 2013 Caminho Neocatecumenal';
+$msg['meta_content']	= 'Retransmissão em vivo do encontro nvocacional de jovens e famílias do Caminho Neocatecumenal em Valencia 2014. Kiko Argüello.';
+$msg['meta_site_name']	= 'Caminho Neocatecumenal Oficial';
 
 $msg['chrome_frame']	= 'Está a usar um navegador <strong>desatualizado</strong>. Por favor, <a href="http://browsehappy.com/">atualiza o teu navegador</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">ativa Google Chrome Frame</a> para melhorá-lo.';
 
 $msg['title']			= 'Encontro vocacional do Caminho Neocatecumenal';
-$msg['subtitle_start']	= '29 de julho';
-$msg['intro_text']		= 'Veja em vivo o <strong>encontro de jovens</strong> no Brasil Kiko Argüello, Carmen Hernández e Pe. Mario Pezzi, iniciadores do Caminho Neocatecumenal com motivo da Jornada Mundial da Juventude.';
+$msg['subtitle_start']	= '1 de junho';
+$msg['intro_text']		= 'Veja em vivo o <strong>encontro de jovens e famílias</strong> em Valencia com iniciadores os iniciadores e responsáveis do Caminho Neocatecumenal.';
 
 $msg['streaming_help']	= '¿Não pode ver o vídeo corretamente? <a href="">Click aquí</a>.';
 
-$msg['not_yet_title']	= 'O evento será retransmitido o 29 de julho ás 14:00 hora de Rio de Janeiro (GMT -3)';
+$msg['not_yet_title']	= 'O evento será retransmitido o 1 de junho ás 16:30, hora de Espanha';
 $msg['local_time']		= 'No seu horário local serão as ';
 $msg['finished']		= 'O encontro já finalizou';
 $msg['unavailable']		= 'A retransmissão não está disponível neste momento. Desculpe as molestias.';
