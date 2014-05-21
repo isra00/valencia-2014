@@ -1,6 +1,6 @@
 <?php
 
-$msg['page_title']		= 'Encontro vocacional do Caminho Neocatecumenal – retransmissão em vivo';
+$msg['page_title']		= 'Encontro Vocacional do Caminho Neocatecumenal Valencia 2014';
 $msg['meta_content']	= 'Retransmissão em vivo do encontro nvocacional de jovens e famílias do Caminho Neocatecumenal em Valencia 2014. Kiko Argüello.';
 $msg['meta_site_name']	= 'Caminho Neocatecumenal Oficial';
 
