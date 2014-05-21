@@ -1,10 +1,10 @@
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.php$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule encuentro-vocacional-camino-neocatecumenal-valencia-2014 /valencia-2014/index.php?lang=es [L]
-    RewriteRule encontro-vocacional-caminho-neocatecumenal-valencia-2014 /valencia-2014/index.php?lang=pt [L]
-    RewriteRule vocational-encounter-neocatechumenal-way-valencia-2014 /valencia-2014/index.php?lang=en [L]
+	RewriteEngine On
+	RewriteBase /streaming-encontro/
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule youth-vocational-meeting-neocatechumenal-way index.php?lang=en [L]
+	RewriteRule encuentro-vocacional-jovenes-camino-neocatecumenal index.php?lang=es [L]
+	RewriteRule incontro-vocazionale-cammino-neocatecumenale index.php?lang=it [L]
 </IfModule>
