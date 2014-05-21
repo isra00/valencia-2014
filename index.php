@@ -13,7 +13,7 @@ define('EVENT_START', 		'2014-06-01 16:31:00');
 define('EVENT_END', 		'2014-06-01 19:30:00');
 define('EVENT_TIMEZONE', 	'Europe/Madrid'); // Valid PHP timezone (https://php.net/manual/en/timezones.php)
 define('LIVESTREAM_EVENT', 	'2248210');
-define('FB_ADMINS', 		'100003576128882'); // For Facebook OG meta tags
+define('FB_ADMINS', 		'639761851'); // For Facebook OG meta tags
 define('FB_IMAGE', 			'http://' . $_SERVER['SERVER_NAME'] . ROOT . '/img/thumb.jpg');
 
 // No need to change this
