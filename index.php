@@ -63,12 +63,12 @@ $languages = array(
 	'pt' => array(
 		'name'	=> 'Português',
 		'code'	=> 'pt_BR',
-		'url'	=> '/encontro-vocacional-jovens-caminho-neocatecumenal'
+		'url'	=> '/encontro-vocacional-caminho-neocatecumenal-valencia-2014'
 	),
 	'en' => array(
 		'name'	=> 'English',
 		'code'	=> 'en_US',
-		'url'	=> '/youth-vocational-encounter-neocatechumenal-way'
+		'url'	=> '/vocational-encounter-neocatechumenal-way-valencia-2014'
 	),
 );
 
