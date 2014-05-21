@@ -1,0 +1,240 @@
+/**
+ * Autor: Israel V
+ *
+ * Rojo: #d71a1a
+ */
+
+/*
+ * GENERAL
+ */
+body {
+	font-family: 'SofiaProLightRegular', sans-serif;
+}
+
+a,
+a:visited {
+	color: #d71a1a;
+}
+
+strong {
+	/*font-weight: 400;*/
+}
+
+.languages {
+	text-align: center;
+	background: #eee;
+	padding: .4em 0 .5em;
+}
+	.languages a {
+		padding: 0 3% 0 22px;
+		background-color: transparent;
+		background-position: left center;
+		background-repeat: no-repeat;
+		display: inline-block;
+		font-size: .9em;
+		text-decoration: none
+	}
+	.languages a:hover {
+		text-decoration: underline;
+	}
+	.languages .pt {
+		background-image: url(../img/flags/br.gif);
+	}
+	.languages .en {
+		background-image: url(../img/flags/us.gif);
+	}
+	.languages .it {
+		background-image: url(../img/flags/it.gif);
+	}
+	.languages .es {
+		background-image: url(../img/flags/es.gif);
+	}
+
+.main {
+	width: 50em;
+	margin: 0 auto;
+	font-weight: 300;
+}
+
+header {
+	margin: 3% 0;
+}
+
+.title {
+	text-align: center;
+	font-weight: 600;
+	margin: 0;
+}
+	.title a {
+		text-decoration: none;
+	}
+
+.subtitle {
+	text-align: center;
+	font-weight: 400;
+	margin-top: 0;
+}
+	.subtitle .end,
+	.subtitle .address,
+	.subtitle .geo {
+		display: none;
+	}
+
+.intro-text {
+	margin: 2em 0;
+}
+
+.livestream-player,
+.redevida-player {
+	text-align: center;
+	display: none;
+}
+.cancaonova-player {
+	text-align: center;
+}
+
+.warning {
+	background: #eee;
+	border: 1px solid silver;
+	border-radius: .4em;
+	padding: 5%;
+	text-shadow: 1px 1px 1px white;
+	color: #555;
+	margin: 0 auto;
+	width: 32em;
+}
+	.warning ul {
+		margin-bottom: 0;
+	}
+.warning.error {
+	color: red;
+}
+.warning.finished {
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.down {
+	overflow: hidden;
+}
+
+.other-channels {
+	margin: 7% 2% 0;
+	width: 27em;
+	max-width: 100%;
+	float: left;
+	border-right: 1px solid silver;
+}
+	.other-channels h3 {
+		margin: 0;
+		font-weight: normal;
+	}
+	.channels {
+		list-style: none;
+		padding: 0;
+		overflow: hidden;
+		margin: 2em 0;
+		text-align: center;
+	}
+		.channels li {
+			display: inline-block;
+			margin-right: 10%;
+		}
+		.channels a {
+			display: inline-block;
+		}
+			.channels a span {
+				display: none;
+			}
+
+		.channels .tvmediterraneo {
+			background: url(../img/tv-mediterraneo-off.gif) left top no-repeat;
+			width: 100px;
+			height: 68px;
+		}
+			.channels .tvmediterraneo:hover {
+				background-image: url(../img/tv-mediterraneo.gif);
+			}
+		.channels .populartv {
+			background: url(../img/tv-popular-off.gif) left top no-repeat;
+			width: 79px;
+			height: 68px;
+		}
+			.channels .populartv:hover {
+				background-image: url(../img/tv-popular.gif);
+			}
+
+.bottom-links {
+	margin: 4em 0 0 1em;
+	text-align: center;
+	font-size: .9em;
+	float: left;
+	width: 17em;
+}
+	.bottom-links a {
+		display: inline-block;
+		text-decoration: none;
+		text-align: left;
+		padding: 0 0 0 .5em;
+		min-height: 4em;
+		font-family: arial, sans-serif;
+		font-size: 1.2em;
+	}
+		.bottom-links a:hover {
+			text-decoration: underline;
+		}
+		.bottom-links a strong {
+			display: block;
+			font-weight: bold;
+		}
+	.bottom-links .jmj-cnc {
+		
+	}
+
+/*
+ * Generic
+ */
+
+.block {
+	display: block;
+}
+
+
+@media only screen and (min-width: 57em) {
+	body {
+		font-size: 1.2em;
+	}
+}
+
+/******************************************************* MOBILE *******************************************************/
+
+
+@media only screen and (max-width: 57em) {
+	body {
+		line-height: 1.2;
+	}
+    .main {
+    	width: auto;
+    	padding: 1%;
+    }
+
+    .title {
+    	font-size: 1.5em;
+    }
+
+    .subtitle {
+    	margin-top: .5em;
+    	font-size: 1.2em;
+    }
+
+	.warning {
+		width: auto;
+	}
+
+	.bottom-links {
+		margin-top: 1em;
+		border-top: 1px solid silver;
+		width: 100%;
+		padding-top: 1em;
+	}
+}

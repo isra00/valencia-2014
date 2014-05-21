@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /streaming-encontro/
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule youth-vocational-meeting-neocatechumenal-way index.php?lang=en [L]
+	RewriteRule encuentro-vocacional-jovenes-camino-neocatecumenal index.php?lang=es [L]
+	RewriteRule incontro-vocazionale-cammino-neocatecumenale index.php?lang=it [L]
+</IfModule>
