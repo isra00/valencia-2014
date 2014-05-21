@@ -1,7 +1,7 @@
 <?php
 
 $msg['page_title']		= 'Encontro Vocacional do Caminho Neocatecumenal Valencia 2014';
-$msg['meta_content']	= 'Retransmissão em vivo do encontro nvocacional de jovens e famílias do Caminho Neocatecumenal em Valencia 2014. Kiko Argüello.';
+$msg['meta_content']	= 'Retransmissão em vivo do encontro vocacional de jovens e famílias do Caminho Neocatecumenal em Valencia 2014. Kiko Argüello.';
 $msg['meta_site_name']	= 'Caminho Neocatecumenal Oficial';
 
 $msg['chrome_frame']	= 'Está a usar um navegador <strong>desatualizado</strong>. Por favor, <a href="http://browsehappy.com/">atualiza o teu navegador</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">ativa Google Chrome Frame</a> para melhorá-lo.';
