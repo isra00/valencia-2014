@@ -70,11 +70,6 @@ function form_select($nombre, $opciones, $seleccionada=null, $atributos=null, $p
 
 function generate_input($name, $value, $type, $attributes)
 {
-	if ('select' == $type)
-	{
-		return form_select($name, $attributes['options'], $value, $attributes, null);
-	}
-
 	$output = "<input name='$name' type='$type'";
 
 	switch ($type)
@@ -95,7 +90,10 @@ function generate_input($name, $value, $type, $attributes)
 			foreach ($attributes as $key=>$val) {
 				$output .= " $key=\"$val\"";
 			}
+			break;
 
+		case 'select':
+			return form_select($name, $attributes['options'], $value, $attributes, null);
 	}
 
 	$output .= ' />';
