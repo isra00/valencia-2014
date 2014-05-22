@@ -3,8 +3,78 @@
 define('CONFIG_FILE', 'config.json');
 define('CACHE_KEY',	'vlc2014-config');
 
+/**
+ * Genera un <select> con las opciones especificadas y un valor por defecto.
+ * Soporta arrays anidados generando <optgroup />
+ * 
+ * @param string    $nombre         El nombre del select
+ * @param array     $opciones       Valores que tomará el select, por ejemplo, 
+ *                                  array('hombre' => 'Hombre', 'mujer'=>'Mujer');
+ * @param mixed     $seleccionada   Opción seleccionada por defecto
+ * @param array     $atributos      Atributos para el elemento <select>
+ * @param boolean   $soloOptions    No devuelve la tag <select>
+ * 
+ * @return string   El HTML final
+ * 
+ * @todo            Añadir tests unitarios
+ */
+function form_select($nombre, $opciones, $seleccionada=null, $atributos=null, $primera_opcion=array('0'=>'Todos'), $soloOptions=false) {
+    
+    $seleccionada = (string) $seleccionada;
+    
+    $salida = '';
+    
+    if (!$soloOptions) {
+        $salida .= '<select name="' . $nombre . '"';
+        $salida .= ' id="' . str_replace('--', '-', str_replace(array('[', ']'), '-', $nombre)) . '"';
+        if (is_array($atributos) && count($atributos)) {
+            foreach ($atributos as $n => $valor) {
+                $salida .= ' ' . $n . '="' . $valor . '"';
+            }
+        }
+
+        $salida .= ">\n";
+    }
+    
+    //Primera opción
+    if (is_array($primera_opcion)) {
+        /** @todo Esto permite muchas "primeras opciones". ¿Es bueno o malo? */
+        foreach ($primera_opcion as $i=>$v) {
+            $salida .= '<option value="' . $i . '">' . $v . "</option>\n";
+        }
+    }
+    
+    foreach ($opciones as $c => $v) {
+
+        if (is_array($v)) {
+            $salida .= "<optgroup label=\"$c\">\n";
+            foreach ($v as $subclave=>$subvalor) {
+                $salida .= '<option value="' . $subvalor . '"';
+                if ($subvalor == $seleccionada) $salida .= ' selected="selected"';
+                $salida .= '>' . $subclave . "</option>\n";
+            }
+            $salida .= "</optgroup>\n";
+        } else {
+            $salida .= '<option value="' . $c . '"';
+            if ($c == $seleccionada) $salida .= ' selected="selected"';
+            $salida .= '>' . $v . '</option>';
+        }
+    }
+    
+    if (!$soloOptions) {
+        $salida .= '</select>';
+    }
+    
+    return $salida;
+}
+
 function generate_input($name, $value, $type, $attributes)
 {
+	if ('select' == $type)
+	{
+		return form_select($name, $attributes['options'], $value, $attributes, null);
+	}
+
 	$output = "<input name='$name' type='$type'";
 
 	switch ($type)
@@ -34,15 +104,23 @@ function generate_input($name, $value, $type, $attributes)
 }
 
 $directives = array(
-	'general_disable' => array(
+	'general_disable'			=> array(
 		'description'	=> 'Desactivar todo el streaming',
 		'type'			=> 'checkbox'
 	),
-	'force_meeting_finished' => array(
+	'force_meeting_finished'	=> array(
 		'description'	=> 'Terminó el encuentro',
 		'type'			=> 'checkbox'
 	),
-	'finish_now' => array(
+	'event_start'				=> array(
+		'description'	=> 'Inicio del evento (hora local)',
+		'type'			=> 'text'
+	),
+	'event_end'					=> array(
+		'description'	=> 'Fin del evento (hora local)',
+		'type'			=> 'text'
+	),
+	'finish_now'				=> array(
 		'description'	=> 'Terminar el encuentro ahora',
 		'type'			=> 'button',
 		'value'			=> 'Terminar ahora mismo (!)', 
@@ -52,22 +130,18 @@ $directives = array(
 			'class' 	=> 'btn btn-danger'
 		),
 	),
-	'redevida' => array(
-		'description'	=> 'Mostrar streaming de Rede Vida',
-		'type'			=> 'checkbox'
-	),
-	'event_start' => array(
-		'description'	=> 'Inicio del evento (hora local)',
-		'type'			=> 'text'
-	),
-	'event_end' => array(
-		'description'	=> 'Fin del evento (hora local)',
-		'type'			=> 'text'
-	),
-	'livestream_event' => array(
+	'livestream_event'			=> array(
 		'description'	=> 'ID del evento en Livestream',
 		'type'			=> 'text'
 	),
+	'player'					=> array(
+		'description'	=> 'Reproductor',
+		'type'			=> 'select',
+		'attributes'	=> array( 'options' => array(
+			'Livestream',
+			'Mediterraneo'
+		) )
+	)
 );
 
 $saved = false;
@@ -120,7 +194,7 @@ $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 </head>
 <body>
 	<div class="container">
-		<h1>Control do streaming</h1>
+		<h1>Control del streaming</h1>
 
 		<?php if ($saved) : ?>
 		<div class="alert alert-success" onclick="this.style.display='none'">Cambios guardados correctamente</div>
