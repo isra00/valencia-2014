@@ -66,26 +66,7 @@
 
         <section class="video-area">
 
-            <?php if ($show['player'] && $show['redevida']) : ?>
-            <!--<div class="redevida-player <?php if ($show['streaming_now']) echo 'block' ?>">
-                <object width="480" height="380" type="application/x-oleobject" standby="Loading Microsoft Windows Media Player components..." codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,0,02,0902" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" id="mediaPlayer"> 
-                    <param value="mms://wmedia.telium.com.br/redevida" name="fileName">  
-                    <param value="0" name="animationatStart"> 
-                    <param value="1" name="transparentatStart"> 
-                    <param value="1" name="autoStart"> 
-                    <param value="1" name="ShowControls"> 
-                    <param value="0" name="ShowDisplay"> 
-                    <param value="0" name="ShowStatusBar"> 
-                    <param value="0" name="loop"> 
-                    <embed width="480" height="380" loop="0" designtimesp="5311" autostart="1" src="mms://wmedia.telium.com.br/redevida" videoborder3d="0" showstatusbar="0" showdisplay="0" showtracker="0" showcontrols="1" bgcolor="darkblue" autosize="0" displaysize="4" id="mediaPlayer" pluginspage="http://microsoft.com/windows/mediaplayer/en/download/" type="application/x-mplayer2">  
-                </object>
-            </div>-->
-            <div class="cancaonova-player <?php if ($show['streaming_now']) echo 'block' ?>">
-                <iframe src="http://tv.cancaonova.com/player/flowplayer.php" height="520" width="720" frameborder="no" style="height: 520px; width: 720px; border: 0"></iframe>
-            </div>
-            <?php endif ?>
-
-            <?php if ($show['player'] && !$show['redevida']) : ?>
+            <?php if ($show['player']) : ?>
             <div class="livestream-player <?php if ($show['streaming_now']) echo 'block' ?>" id="livestream-player">
                 <iframe src="http://new.livestream.com/accounts/4698529/events/<?php echo $config['livestream_event'] ?>/player?width=640&height=360&autoPlay=false&mute=false" width="640" height="360" frameborder="0" scrolling="no"> </iframe>
             </div>
@@ -143,7 +124,7 @@
         eventTimeUtc.setUTCHours(<?php echo gmdate('H', MEETING_START) ?>);
         eventTimeUtc.setUTCMinutes(<?php echo gmdate('i', MEETING_START) ?>);
 
-        if (new Date(<?php EVENT_START ?>).getTimezoneOffset() != <?php echo TIME_OFFSET ?>)
+        if (new Date(<?php $config['event_start'] ?>).getTimezoneOffset() != <?php echo TIME_OFFSET ?>)
         {
             if (htmlLocalTime = document.getElementById("local-time"))
             {
