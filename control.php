@@ -146,7 +146,6 @@ $saved = false;
 
 if (isset($_POST['sent']))
 {
-
 	$directives_to_store = array();
 
 	foreach ($directives as $code=>$directive)
@@ -199,7 +198,6 @@ $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 		<?php endif ?>
 
 		<form method="post" action="<?php echo $_SERVER['REQUEST_URI'] ?>">
-
 			<table class="table">
 			<?php foreach ($directives as $code=>$d) : ?>
 				<tr>
@@ -217,7 +215,6 @@ $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 				<p><strong class="red">¡Verifica todas las opciones antes de guardar!</strong></p>
 				<button type="submit" class="btn btn-primary btn-large" name="sent">Guardar</button>
 			</div>
-
 		</form>
 	</div>
 </body>
