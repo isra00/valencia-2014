@@ -156,10 +156,6 @@ a:visited {
 	color: #d71a1a;
 }
 
-strong {
-	/*font-weight: 400;*/
-}
-
 .languages {
 	text-align: center;
 	background: rgba(255,255,255,.5);
@@ -335,9 +331,6 @@ header {
 			display: block;
 			font-weight: bold;
 		}
-	.bottom-links .jmj-cnc {
-		
-	}
 
 /*
  * Generic
@@ -347,12 +340,6 @@ header {
 	display: block;
 }
 
-
-@media only screen and (min-width: 57em) {
-	body {
-		font-size: 1.2em;
-	}
-}
 
 /******************************************************* MOBILE *******************************************************/
 
