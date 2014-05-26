@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?php echo ROOT ?>/css/streaming.css">
 
     <meta name="description" content="<?php echo $msg['meta_content'] ?>" />
-    <link rel="canonical" href="http://<?php echo DOMAIN . $_SERVER['REQUEST_URI'] ?>" />
+    <link rel="canonical" href="http://<?php echo DOMAIN . $languages[$current_lang]['url'] ?>" />
     <meta property="og:locale" content="<?php echo $languages[$current_lang]['code'] ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<?php echo $msg['page_title'] ?>" />
@@ -44,7 +44,7 @@
                 </a>
             </h1>
             <h2 class="subtitle">
-                <time class="start" itemprop="startDate" datetime="2014-06-01T16:30+01:00"><?php echo $msg['subtitle_start'] ?></time>
+                <time class="start" itemprop="startDate" datetime="2014-06-01T17:00+01:00"><?php echo $msg['subtitle_start'] ?></time>
                 <time class="end" itemprop="endDate" datetime="2014-06-01T19:30+01:00">Jun 01, 19:30PM</time>
                 ·
                 <span class="location" itemprop="location" itemscope itemtype="http://data-vocabulary.org/​Organization">

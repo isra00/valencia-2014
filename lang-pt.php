@@ -12,7 +12,7 @@ $msg['intro_text']		= 'Veja em vivo o <strong>encontro de jovens e famílias</st
 
 $msg['streaming_help']	= '¿Não pode ver o vídeo corretamente? <a href="">Click aquí</a>.';
 
-$msg['not_yet_title']	= 'O evento será retransmitido o 1 de junho ás 16:30, hora de Espanha';
+$msg['not_yet_title']	= 'O evento será retransmitido o 1 de junho ás 17:00, hora de Espanha';
 $msg['local_time']		= 'No seu horário local serão as ';
 $msg['finished']		= 'O encontro já finalizou';
 $msg['unavailable']		= 'A retransmissão não está disponível neste momento. Desculpe as molestias.';

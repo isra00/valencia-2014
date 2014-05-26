@@ -12,7 +12,7 @@ $msg['intro_text']		= 'Watch live the <strong>meeting with the youth and familie
 
 $msg['streaming_help']	= 'Having trouble viewing the video? <a href="">Click here</a>.';
 
-$msg['not_yet_title']	= 'The transmission will start on June 1st at 16:30 PM local Spanish time';
+$msg['not_yet_title']	= 'The transmission will start on June 1st at 17:00 PM local Spanish time';
 $msg['local_time']		= 'In your local time zone, the time will be ';
 $msg['finished']		= 'The meeting has finished.';
 $msg['unavailable']		= 'The stream is not available at this time. We apologize for any inconvenience.';
