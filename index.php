@@ -65,9 +65,9 @@ header("Content-Language: $current_lang");
 header('Content-type: text/html;charset=UTF-8');
 
 $show = array(
-	'player' 		=> !$config['general_disable'] && !$config['force_meeting_finished'],
-	'not_yet'		=> (time() < MEETING_START) && !$config['force_meeting_finished'],
-	'finished'		=> time() > MEETING_END || $config['force_meeting_finished'],
+	'player' 		=> !$config['general_disable'],
+	'not_yet'		=> (time() < MEETING_START),
+	'finished'		=> time() > MEETING_END,
 );
 
 $show['streaming_now'] = time() > MEETING_START && time() < MEETING_END && $show['player'];

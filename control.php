@@ -106,10 +106,6 @@ $directives = array(
 		'description'	=> 'Desactivar todo el streaming',
 		'type'			=> 'checkbox'
 	),
-	'force_meeting_finished'	=> array(
-		'description'	=> 'Terminó el encuentro',
-		'type'			=> 'checkbox'
-	),
 	'event_start'				=> array(
 		'description'	=> 'Inicio del evento (hora local)',
 		'type'			=> 'text'
