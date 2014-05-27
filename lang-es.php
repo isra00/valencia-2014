@@ -17,6 +17,6 @@ $msg['local_time']		= 'En su hora local serán las ';
 $msg['finished']		= 'El encuentro ha terminado';
 $msg['unavailable']		= 'La retransmisión no está disponible en estos momentos. Disculpe las molestias.';
 
-$msg['other_media']		= 'Otros medios que también emiten el encuentro';
+$msg['other_media']		= 'El Encuentro Vocacional en otros medios';
 
 $msg['link_cnc'] 		= 'Sitio oficial <strong>Camino Neocatecumenal</strong>';

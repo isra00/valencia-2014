@@ -253,7 +253,8 @@ header {
 }
 	.other-channels h3 {
 		margin: 0;
-		font-weight: lighter;
+		font-weight: normal;
+		padding: 0 2em 0 1em;
 	}
 	.channels {
 		list-style: none;
