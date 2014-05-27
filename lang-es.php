@@ -1,6 +1,6 @@
 <?php
 
-$msg['page_title']		= 'Ver en directo Encuentro Vocacional Valencia 2014';
+$msg['page_title']		= 'Encuentro Vocacional del Camino Neocatecumenal Valencia 2014';
 $msg['meta_content']	= 'Retransmisión en directo del Encuentro Vocacional de jóvenes y familias del Camino Neocatecumenal en Valencia 2014. Kiko Argüello.';
 $msg['meta_site_name']	= 'Camino Neocatecumenal Oficial';
 

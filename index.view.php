@@ -125,7 +125,7 @@
     Streaming = {};
 
     /**
-     * Checks for message from the server (yes, it's push)
+     * Checks for message from the server (yes, it's pull)
      */
     Streaming.checkForMessage = function()
     {
