@@ -98,8 +98,8 @@
                 <h3><?php echo $msg['other_media'] ?></h3>
 
                 <ul class="channels">
-                    <li><a target="_blank" class="tvmediterraneo" title="TV Mediterráneo" href="http://webtv.tvmediterraneo.es/"><span>TV Mediterráneo</span></a></li>
-                    <li><a target="_blank" class="populartv" title="Popular TV Murcia" href=""><span>Popular TV Murcia</span></a></li>
+                    <li><a target="_blank" rel="nofollow" class="tvmediterraneo" title="TV Mediterráneo" href="http://webtv.tvmediterraneo.es/"><span>TV Mediterráneo</span></a></li>
+                    <li><a target="_blank" rel="nofollow" class="populartv" title="Popular TV Murcia" href="http://www.populartvrm.com/"><span>Popular TV Murcia</span></a></li>
                 </ul>
             </section>
 
