@@ -65,7 +65,7 @@ header("Content-Language: $current_lang");
 header('Content-type: text/html;charset=UTF-8');
 
 $show = array(
-	'player' 		=> !$config['general_disable'],
+	'player' 		=> time() > MEETING_START && time() < MEETING_END && !$config['general_disable'],
 	'not_yet'		=> (time() < MEETING_START),
 	'finished'		=> time() > MEETING_END,
 );
