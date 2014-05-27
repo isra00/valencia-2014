@@ -136,8 +136,8 @@ $directives = array(
 		'description'	=> 'Reproductor',
 		'type'			=> 'select',
 		'attributes'	=> array( 'options' => array(
-			'Livestream',
-			'Mediterraneo'
+			'livestream'	=> 'Livestream',
+			'mediterraneo'	=> 'MediterraneoTV'	
 		) )
 	)
 );
