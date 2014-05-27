@@ -22,7 +22,7 @@
     <meta property="fb:admins" content="<?php echo FB_ADMINS ?>" />
     <meta property="og:image" content="<?php echo FB_IMAGE ?>" />
 </head>
-<body onload="init()">
+<body>
     <!--[if lt IE 7]>
         <p class="chromeframe"><?php echo $msg['chrome_frame'] ?></p>
     <![endif]-->
@@ -118,10 +118,58 @@
 
     </div>
 
-    <?php if ($show['player']) : ?>
-    <script>
-    function init() {
+    <script src="<?php echo ROOT ?>/js/zepto.min.js"></script>
 
+    <script>
+
+    Streaming = {};
+
+    /**
+     * Checks for message from the server (yes, it's push)
+     */
+    Streaming.checkForMessage = function()
+    {
+        console.log("Checking for message...");
+
+        $.ajax({
+            url: "<?php echo ROOT ?>/message.json",
+            cache: false,
+            dataType: "json",
+            success: function(message)
+            {
+                if (null != message && message.hasOwnProperty("action"))
+                {
+
+                    if (message.action == "reload")
+                    {
+                        console.log("Received reload message " + message.id + " @ " + new Date().toLocaleTimeString());
+
+                        // Don't run twice the same message
+                        if (window.location.hash != "#" + message.id)
+                        {
+                            console.log("Reloading...");
+                            window.location = window.location.pathname + "#" + message.id;
+                            location.reload();
+                        }
+                        else
+                        {
+                            console.log("Skipping reload");
+                        }
+                    }
+                }
+                else
+                {
+                    console.log("Received no message ID @ " + new Date().toLocaleTimeString());
+                }
+            }
+        });
+    }
+
+    /**
+     * Writes the event start time in the user's timezone
+     */
+    Streaming.writeLocalStartTime = function()
+    {
         var htmlLocalTime,
             eventTimeUtc = new Date(),
             minutes;
@@ -137,27 +185,17 @@
             if (htmlLocalTime = document.getElementById("local-time"))
             {
                 minutes = (eventTimeUtc.getMinutes() < 10) ? "0" + eventTimeUtc.getMinutes() : eventTimeUtc.getMinutes();
-                /** @todo Si la hora local es la misma, eliminar este mensaje */
                 htmlLocalTime.innerHTML = "<?php echo $msg['local_time'] ?>" + eventTimeUtc.getHours() + ":" + minutes + ".";
             }
         }
 
-        var checkDate = function() {
-           var now = new Date();
+    }
 
-           if (now >= eventTimeUtc)
-            {
-                document.getElementById("livestream-player").style.display = "block";
-                document.getElementById("not-yet").style.display = "none";
-            }
-        };
-
-        checkDate();
-
-        setInterval(checkDate, 30*1000);
-    };
+    $(function() {
+        Streaming.writeLocalStartTime();
+        setInterval(Streaming.checkForMessage, 10*1000);
+    });
     </script>
-    <?php endif ?>
 
     <?php //if (!DO_NOT_TRACK) : ?>
     <script>

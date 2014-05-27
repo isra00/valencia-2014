@@ -2,8 +2,10 @@
 
 error_reporting(E_ALL);
 
+/** @todo Eliminar este código duplicado con un init.php */
 define('CONFIG_FILE', 'config.json');
 define('CACHE_KEY',	'vlc2014-config');
+define('EVENT_TIMEZONE', 	'Europe/Madrid');
 
 /**
  * Genera un <select> con las opciones especificadas y un valor por defecto.
@@ -105,9 +107,17 @@ function generate_input($name, $value, $type, $attributes)
 	return $output;
 }
 
+function write_message_reload()
+{
+	file_put_contents("message.json", json_encode(array(
+		'id'		=> time(),
+		'action'	=>'reload'
+	)));
+}
+
 $directives = array(
 	'general_disable'			=> array(
-		'description'	=> 'Desactivar todo el streaming',
+		'description'	=> '<span class="glyphicon glyphicon-ban-circle"></span> Desactivar todo el streaming (incluye recarga)',
 		'type'			=> 'checkbox'
 	),
 	'event_start'				=> array(
@@ -119,13 +129,30 @@ $directives = array(
 		'type'			=> 'text'
 	),
 	'finish_now'				=> array(
-		'description'	=> 'Terminar el encuentro ahora',
+		'description'	=> '<span class="glyphicon glyphicon-off"></span> Terminar el encuentro ahora (incluye recarga)',
 		'type'			=> 'submit',
 		'value'			=> 'Terminar ahora mismo (!)', 
 		'attributes'	=> array(
 			'type'		=> 'submit', 
-			'contents'	=> 'Terminar ahora', 
 			'class' 	=> 'btn btn-danger'
+		),
+	),
+	'send_reload'		=> array(
+		'description'	=> '<span class="glyphicon glyphicon-refresh"></span> Hacer que los clientes recarguen la página',
+		'type'			=> 'submit',
+		'value'			=> 'Ordenar recarga (!)',
+		'attributes'	=> array(
+			'type'		=> 'submit', 
+			'class' 	=> 'btn btn-warning'
+		),
+	),
+	'remove_message'	=> array(
+		'description'	=> '<span class="glyphicon glyphicon-volume-off"></span> Eliminar mensaje actual',
+		'type'			=> 'submit',
+		'value'			=> 'Eliminar mensaje enviado',
+		'attributes'	=> array(
+			'type'		=> 'submit', 
+			'class' 	=> 'btn btn-warning'
 		),
 	),
 	'livestream_event'			=> array(
@@ -141,6 +168,8 @@ $directives = array(
 		) )
 	)
 );
+
+$current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 
 $save = false;
 $error_date = false;
@@ -165,31 +194,63 @@ if (!empty($_POST))
 			}
 		}
 
-		$directives_to_store[$code] = $value_to_store;
+		// Buttons are not directives to store
+		if (false == in_array($code, array('finish_now', 'send_reload', 'remove_message')))
+		{
+			$directives_to_store[$code] = $value_to_store;
+		}
 	}
 
 	$save = true;
 
 	if (isset($_POST['finish_now']))
 	{
+		// Form validation
 		if (strtotime($directives_to_store['event_start']) > time())
 		{
 			$error_date = true;
 			$save = false;
-		} else {
+		}
+		else
+		{
+			write_message_reload();
 			$directives_to_store['event_end'] = date('Y-m-d H:i:s');
 		}
 	}
 
-	if ($save) {
+	$general_disable_changes = $current_config['general_disable'] != $directives_to_store['general_disable'];
+
+	if (isset($_POST['send_reload']) || $general_disable_changes)
+	{
+		write_message_reload();
+	}
+
+	if (isset($_POST['remove_message']))
+	{
+		file_put_contents("message.json", "");
+	}
+
+	if ($save)
+	{
 		$json = json_encode($directives_to_store);
 		$json = str_replace(array(',"', '{', '}', '":'), array(",\n\"", "{\n", "\n}", '": '), $json);
-		$current_config = file_put_contents(CONFIG_FILE, $json);
+		file_put_contents(CONFIG_FILE, $json);
 		apc_clear_cache('user');
+		$current_config = $directives_to_store;
 	}
 }
 
-$current_config = json_decode(file_get_contents(CONFIG_FILE), true);
+$message = file_get_contents("message.json");
+
+if (empty($message))
+{
+	$message = 'No hay mensaje activo';
+}
+else
+{
+	$message = "<pre>$message</pre>"
+			 . "enviado: " . date('Y-m-d H:i:s', json_decode($message, true)['id']);
+}
 
 ?>
 <!DOCTYPE html>
@@ -207,6 +268,13 @@ $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 <body>
 	<div class="container">
 		<h1>Control del streaming</h1>
+
+		<div class="panel panel-default">
+			<table class="table">
+				<tr><th>Hora del servidor</th><td><?php echo date('Y-m-d H:i:s') . ' (' . EVENT_TIMEZONE . ')' ?></td></tr>
+				<tr><th>Mensaje actual</th><td><?php echo $message ?></td></tr>
+			</table>
+		</div>
 
 		<?php if ($save) : ?>
 		<div class="alert alert-success" onclick="this.style.display='none'">Cambios guardados correctamente</div>
