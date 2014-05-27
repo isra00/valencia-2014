@@ -1,22 +1,22 @@
 <?php
 
-$msg['page_title']		= 'Encontro Vocacional do Caminho Neocatecumenal Valencia 2014';
-$msg['meta_content']	= 'Retransmissão em vivo do encontro vocacional de jovens e famílias do Caminho Neocatecumenal em Valencia 2014. Kiko Argüello.';
+$msg['page_title']		= 'Encontro Vocacional do Caminho Neocatecumenal Valência 2014';
+$msg['meta_content']	= 'Transmissão -ao vivo- do Encontro Vocacional de jovens e famílias do Caminho Neocatecumenal em Valência (Espanha) 2014. Kiko Argüello.';
 $msg['meta_site_name']	= 'Caminho Neocatecumenal Oficial';
 
-$msg['chrome_frame']	= 'Está a usar um navegador <strong>desatualizado</strong>. Por favor, <a href="http://browsehappy.com/">atualiza o teu navegador</a> ou <a href="http://www.google.com/chromeframe/?redirect=true">ativa Google Chrome Frame</a> para melhorá-lo.';
+$msg['chrome_frame']	= 'Estais usando um navegador <strong>antigo</strong>. Por favor, <a href="http://browsehappy.com/">atualize o seu navegador</a>.';
 
-$msg['title']			= 'Encontro vocacional do Caminho Neocatecumenal';
-$msg['subtitle_start']	= '1 de junho';
-$msg['intro_text']		= 'Veja em vivo o <strong>encontro de jovens e famílias</strong> em Valencia com os iniciadores e responsáveis do Caminho Neocatecumenal.';
+$msg['title']			= 'Encontro Vocacional do Caminho Neocatecumenal';
+$msg['subtitle_start']	= '1º de junho 2014';
+$msg['intro_text']		= 'Assista -ao vivo- o <strong>Encontro de jovens e famílias</strong> em Valência (Espanha) com os iniciadores e responsáveis do Caminho Neocatecumenal.';
 
-$msg['streaming_help']	= '¿Não pode ver o vídeo corretamente? <a href="">Click aquí</a>.';
+$msg['streaming_help']	= 'Não está conseguindo visualizar o vídeo corretamente? <a href="">Clique aqui</a>.';
 
-$msg['not_yet_title']	= 'O evento será retransmitido o 1 de junho ás 17:00, hora de Espanha';
-$msg['local_time']		= 'No seu horário local serão as ';
-$msg['finished']		= 'O encontro já finalizou';
-$msg['unavailable']		= 'A retransmissão não está disponível neste momento. Desculpe as molestias.';
+$msg['not_yet_title']	= 'A transmissão começará no domingo, 1º de junho ás 17:00, horário de Espanha';
+$msg['local_time']		= 'Em seu horário local será as ';
+$msg['finished']		= 'O Encontro terminou';
+$msg['unavailable']		= 'A transmissão não está disponível neste momento. Desculpe.';
 
-$msg['other_media']		= 'Outros meios que transmitem o evento';
+$msg['other_media']		= 'Outros meios que também farão a transmissão do Encontro';
 
 $msg['link_cnc'] 		= 'Site oficial <strong>Caminho Neocatecumenal</strong>';
