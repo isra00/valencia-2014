@@ -177,6 +177,9 @@ a:visited {
 	.languages .es {
 		background-image: url(../img/flags/es.gif);
 	}
+	.languages .fr {
+		background-image: url(../img/flags/fr.gif);
+	}
 
 .main {
 	width: 50em;
@@ -299,7 +302,7 @@ header {
 	text-align: center;
 	font-size: .9em;
 	float: left;
-	width: 17em;
+	width: 18em;
 }
 	.bottom-links a {
 		display: inline-block;

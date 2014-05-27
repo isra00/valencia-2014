@@ -51,6 +51,16 @@ $languages = array(
 		'code'	=> 'en_US',
 		'url'	=> '/vocational-encounter-neocatechumenal-way-valencia-2014'
 	),
+	'it' => array(
+		'name'	=> 'Italiano',
+		'code'	=> 'it_IT',
+		'url'	=> '/incontro-vocazionale-cammino-neocatecumenale-valencia-2014'
+	),
+	'fr' => array(
+		'name'	=> 'Français',
+		'code'	=> 'fr_FR',
+		'url'	=> '/rencontre-vocationelle-chemin-neocatechumenal-valence-2014'
+	),
 );
 
 $current_lang = isset($_GET['lang']) ? $_GET['lang'] : DEFAULT_LANGUAGE;

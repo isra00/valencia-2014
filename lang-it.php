@@ -1,22 +1,22 @@
 <?php
 
-$msg['page_title']		= 'Incontro vocazionale del Cammino Neocatecumenale - Diretta';
-$msg['meta_content']	= 'Diretta dell’incontro vocazionale dei giovani del Cammino Neocatecumenale in occasione della GMG 2013 di Rio de Janeiro. Kiko Argüello.';
-$msg['meta_site_name']	= 'Rio 2013 Cammino Neocatecumenale';
+$msg['page_title']		= 'Vedere in diretta l’Incontro Vocazionale Valencia 2014';
+$msg['meta_content']	= 'Ritrasmissione in diretta del Incontro Vocazionale dei giovani e delle famiglie del Cammino Neocatecumenale in Valencia 2014. Kiko Argüello.';
+$msg['meta_site_name']	= 'Cammino Neocatecumenale Ufficiale';
 
-$msg['chrome_frame']	= 'Si sta utilizzando un browser <strong>scaduto</strong>. Si prega di <a href="http://browsehappy.com/">aggiornare il browser</a> o di <a href="http://www.google.com/chromeframe/?redirect=true">attivare Google Chrome Frame per migliorarlo</a>.';
+$msg['chrome_frame']	= 'Utilizza un navigatore <strong>obsoleto</strong>. Per favore <a href="http://browsehappy.com/">aggiornare il suo navigatore</a>';
 
-$msg['title']			= 'Incontro vocazionale del Cammino Neocatecumenale';
-$msg['subtitle_start']	= '29 luglio';
-$msg['intro_text']		= 'Guarda la diretta dell’<strong>incontro dei giovani</strong> in Brasile, con Kiko Argüello, Carmen Hernández e P. Mario Pezzi, iniziatori del Cammino Neocatecumenale, in occasione della Giornata Mondiale della Gioventù.';
+$msg['title']			= 'Incontre Vocazionale del Cammino Neocatecumenale';
+$msg['subtitle_start']	= '1mo Giugno';
+$msg['intro_text']		= 'Guardate in diretta l’<strong>Incontro di giovani e famiglie</strong> a Valencia con gli iniziatori e responsabili del Cammino Neocatecumenale';
 
-$msg['streaming_help']	= 'Non si riesce a visualizzare correttamente il video? <a href="">Cliccare qui</a>.';
+$msg['streaming_help']	= 'Non può vedere il video correttamente? <a href="">Clicca qui</a>.';
 
-$msg['not_yet_title']	= 'L’evento verrà trasmesso il 29 luglio alle ore 14:00, ora di Rio (GMT -3).';
-$msg['local_time']		= 'Ora locale ';
-$msg['finished']		= 'L’incontro è terminato';
-$msg['unavailable']		= 'La diretta non è disponibile in questo momento. Ci scusiamo per il disagio.';
+$msg['not_yet_title']	= 'La ritrasmissione comincierà il 1mo Giugno alle 17, ora della Spagna';
+$msg['local_time']		= 'la sua ora locale sarà ';
+$msg['finished']		= 'L’incontro è finito';
+$msg['unavailable']		= 'La ritrasmissione non è disponibile per il momento. Ci scusiamo per l’inconveniente.';
 
-$msg['other_media']		= 'Altri media che trasmettono l\'incontro';
+$msg['other_media']		= 'Altri media che trasmettono anche loro l’incontro';
 
 $msg['link_cnc'] 		= 'Sito ufficiale <strong>Cammino Neocatecumenale</strong>';

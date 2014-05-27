@@ -7,4 +7,6 @@
     RewriteRule encuentro-vocacional-camino-neocatecumenal-valencia-2014 /valencia-2014/index.php?lang=es [L]
     RewriteRule encontro-vocacional-caminho-neocatecumenal-valencia-2014 /valencia-2014/index.php?lang=pt [L]
     RewriteRule vocational-encounter-neocatechumenal-way-valencia-2014 /valencia-2014/index.php?lang=en [L]
+    RewriteRule incontro-vocazionale-cammino-neocatecumenale-valencia-2014 /valencia-2014/index.php?lang=it [L]
+    RewriteRule rencontre-vocationelle-chemin-neocatechumenal-valence-2014 /valencia-2014/index.php?lang=fr [L]
 </IfModule>
