@@ -152,15 +152,17 @@ a:visited {
 	width: 50em; 
 	margin: 0 auto;
 	border-bottom: 1px solid white;
+	line-height: 1.7em;
 }
 	.languages a {
-		padding: 0 1em 0 22px;
+		padding: 0 1.5em 0 22px;
 		background-color: transparent;
 		background-position: left center;
 		background-repeat: no-repeat;
 		display: inline-block;
 		font-size: .9em;
-		text-decoration: none
+		text-decoration: none;
+		font-weight: bold;
 	}
 	.languages a:hover {
 		text-decoration: underline;
