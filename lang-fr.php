@@ -7,7 +7,7 @@ $msg['meta_site_name']	= 'Chemin Néocatéchuménal Officiel';
 $msg['chrome_frame']	= 'Vous utilisez un navigateur internet <strong>obsolète</strong>. Veuillez <a href="http://browsehappy.com/">mettre à jour votre navigateur</a>.';
 
 $msg['title']			= 'Rencontre Vocationelle du Chemin Néocatéchuménal';
-$msg['subtitle_start']	= '1er Juin';
+$msg['subtitle_start']	= '1er Juin 2014';
 $msg['intro_text']		= 'Regardez en direct la <strong>Rencontre des jeunes et des familles</strong> à Valence avec les initiateurs et responsables du Chemin Néocatéchuménal.';
 
 $msg['streaming_help']	= 'Vous ne pouvez pas voir la vidéo correctement? <a href="">Cliquez ici</a>.';

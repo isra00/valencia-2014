@@ -7,7 +7,7 @@ $msg['meta_site_name']	= 'Cammino Neocatecumenale Ufficiale';
 $msg['chrome_frame']	= 'Utilizza un navigatore <strong>obsoleto</strong>. Per favore <a href="http://browsehappy.com/">aggiornare il suo navigatore</a>';
 
 $msg['title']			= 'Incontre Vocazionale del Cammino Neocatecumenale';
-$msg['subtitle_start']	= '1mo Giugno';
+$msg['subtitle_start']	= '1mo Giugno 2014';
 $msg['intro_text']		= 'Guardate in diretta l’<strong>Incontro di giovani e famiglie</strong> a Valencia con gli iniziatori e responsabili del Cammino Neocatecumenale';
 
 $msg['streaming_help']	= 'Non può vedere il video correttamente? <a href="">Clicca qui</a>.';

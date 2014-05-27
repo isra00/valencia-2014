@@ -7,7 +7,7 @@ $msg['meta_site_name']	= 'Neocatechumenal Way Official';
 $msg['chrome_frame']	= 'You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.';
 
 $msg['title']			= 'Vocational encounter of the Neocatechumenal Way';
-$msg['subtitle_start']	= 'June 1st';
+$msg['subtitle_start']	= 'June 1st 2014';
 $msg['intro_text']		= 'Watch live the <strong>meeting with the youth and families</strong> in Valencia with the initiators and responsibles of the Neocatechumenal Way.';
 
 $msg['streaming_help']	= 'Having trouble viewing the video? <a href="">Click here</a>.';
