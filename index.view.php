@@ -139,7 +139,6 @@
             {
                 if (null != message && message.hasOwnProperty("action"))
                 {
-
                     if (message.action == "reload")
                     {
                         console.log("Received reload message " + message.id + " @ " + new Date().toLocaleTimeString());
@@ -161,6 +160,10 @@
                 {
                     console.log("Received no message ID @ " + new Date().toLocaleTimeString());
                 }
+            },
+            error: function(jqXHR, textStatus, errorThrown)
+            {
+                console.log("Error XHR: " + errorThrown + " @ " + new Date().toLocaleTimeString());
             }
         });
     }
