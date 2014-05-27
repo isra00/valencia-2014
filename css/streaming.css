@@ -214,12 +214,7 @@ header {
 	text-align: center;
 }
 
-.livestream-player,
-.redevida-player {
-	text-align: center;
-	display: none;
-}
-.cancaonova-player {
+.player {
 	text-align: center;
 }
 

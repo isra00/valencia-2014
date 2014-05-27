@@ -70,8 +70,6 @@ $show = array(
 	'finished'		=> time() > MEETING_END,
 );
 
-$show['streaming_now'] = time() > MEETING_START && time() < MEETING_END && $show['player'];
-
 $time_offset_friendly = (TIME_OFFSET < 0 ? '+' : '') . intval(TIME_OFFSET * (-1) / 60);
 $time_offset_friendly .= (abs(TIME_OFFSET) % 60 != 0) ? ":" . abs(TIME_OFFSET) % 60 : '';
 
