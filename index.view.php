@@ -67,13 +67,17 @@
         <section class="video-area">
 
             <?php if ($show['player']) : ?>
-            <?php if ('livestream' == $config['player']) : ?>
-                <div class="livestream-player" id="livestream-player">
-                    <iframe src="http://new.livestream.com/accounts/4698529/events/<?php echo $config['livestream_event'] ?>/player?width=640&height=360&autoPlay=false&mute=false" width="640" height="360" frameborder="0" scrolling="no"></iframe>
+                <div class="player">
+
+                <?php if ('livestream' == $config['player']) : ?>
+                    <div class="livestream-player" id="livestream-player">
+                        <iframe src="http://new.livestream.com/accounts/4698529/events/<?php echo $config['livestream_event'] ?>/player?width=640&height=360&autoPlay=false&mute=false" width="640" height="360" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                <?php elseif ('mediterraneo' == $config['player']) : ?>
+                    <iframe width="800" height="450" frameborder="0" marginheight="0px" marginwidth="0px" src="http://core.enetres.net/CoreV1/Share/489DDF7FE98241D19D8970314BC9D3EF021?ignoreCommentsBox=true&amp;rnd=0.38213229505345225"></iframe>
+                <?php endif ?>
+
                 </div>
-            <?php elseif ('mediterraneo' == $config['player']) : ?>
-                <iframe width="800" height="450" frameborder="0" marginheight="0px" marginwidth="0px" src="http://core.enetres.net/CoreV1/Share/489DDF7FE98241D19D8970314BC9D3EF021?ignoreCommentsBox=true&amp;rnd=0.38213229505345225"></iframe>
-            <?php endif ?>
             <?php endif ?>
 
             <?php if ($show['not_yet'] && !$config['general_disable']) : ?>
@@ -108,7 +112,7 @@
             </section>
 
             <footer class="bottom-links">
-                <a class="cnc" href="http://camminoneocatecumenale.it"><?php echo $msg['link_cnc'] ?></a>
+                <a class="cnc" href="http://www.camminoneocatecumenale.it"><?php echo $msg['link_cnc'] ?></a>
             </footer>
         </div>
 
