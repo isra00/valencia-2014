@@ -112,7 +112,7 @@
             </section>
 
             <footer class="bottom-links">
-                <a class="cnc" href="http://www.camminoneocatecumenale.it"><?php echo $msg['link_cnc'] ?></a>
+                <a class="cnc" target="_blank" href="http://www.camminoneocatecumenale.it"><?php echo $msg['link_cnc'] ?></a>
             </footer>
         </div>
 
