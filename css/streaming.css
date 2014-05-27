@@ -129,22 +129,11 @@
  * GENERAL
  */
 html {
-	background: url(images/bg.jpg) no-repeat center center fixed; 
+	background: url(../img/bg.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-
-	/*background-image: url(../img/source/resize/8132200543_e8499ab9f5_o.jpg);*/
-	/*background-image: url(../img/source/resize/8132219632_f9eeb4e9b4_o.jpg);*/ /* negros */
-	/*background-image: url(../img/source/resize/8132220564_4127900c5e_o.jpg);*/
-	/*background-image: url(../img/source/resize/8132223906_821ebb38b8_o.jpg);*/
-	/*background-image: url(../img/source/resize/8132227064_25ef1a0726_o.jpg);*/
-	background-image: url(../img/source/resize/8405098329_a7b7e23d49_o.jpg); /* Parece una manifa, pero ok */
-	background-image: url(../img/source/resize/8132219632_f9eeb4e9b4_o_blanco.jpg); /* Parece una manifa, pero ok */
-
-	background-position: center top;
-
 }
 
 body {
