@@ -41,16 +41,6 @@ $languages = array(
 		'code'	=> 'es_ES',
 		'url'	=> '/encuentro-vocacional-camino-neocatecumenal-valencia-2014',
 	),
-	'pt' => array(
-		'name'	=> 'Português',
-		'code'	=> 'pt_BR',
-		'url'	=> '/encontro-vocacional-caminho-neocatecumenal-valencia-2014'
-	),
-	'en' => array(
-		'name'	=> 'English',
-		'code'	=> 'en_US',
-		'url'	=> '/vocational-encounter-neocatechumenal-way-valencia-2014'
-	),
 	'it' => array(
 		'name'	=> 'Italiano',
 		'code'	=> 'it_IT',
@@ -60,6 +50,16 @@ $languages = array(
 		'name'	=> 'Français',
 		'code'	=> 'fr_FR',
 		'url'	=> '/rencontre-vocationelle-chemin-neocatechumenal-valence-2014'
+	),
+	'pt' => array(
+		'name'	=> 'Português',
+		'code'	=> 'pt_BR',
+		'url'	=> '/encontro-vocacional-caminho-neocatecumenal-valencia-2014'
+	),
+	'en' => array(
+		'name'	=> 'English',
+		'code'	=> 'en_US',
+		'url'	=> '/vocational-encounter-neocatechumenal-way-valencia-2014'
 	),
 );
 
