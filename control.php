@@ -166,7 +166,11 @@ $directives = array(
 			'livestream'	=> 'Livestream',
 			'mediterraneo'	=> 'MediterraneoTV'	
 		) )
-	)
+	),
+	'enable_messages'	=> array(
+		'description'	=> '<span class="glyphicon glyphicon-transfer"></span> Activar mensajes',
+		'type'			=> 'checkbox'
+	),
 );
 
 $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
@@ -220,7 +224,7 @@ if (!empty($_POST))
 
 	$general_disable_changes = $current_config['general_disable'] != $directives_to_store['general_disable'];
 
-	if (isset($_POST['send_reload']) || $general_disable_changes)
+	if (isset($_POST['send_reload']) || $general_disable_changes || $directives_to_store['enable_messages'] == false)
 	{
 		write_message_reload();
 	}

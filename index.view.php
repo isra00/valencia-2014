@@ -193,7 +193,10 @@
 
     $(function() {
         Streaming.writeLocalStartTime();
-        setInterval(Streaming.checkForMessage, 10*1000);
+
+        <?php if ($config['enable_messages']) : ?>
+        setInterval(Streaming.checkForMessage, 30*1000);
+        <?php endif ?>
     });
     </script>
 
