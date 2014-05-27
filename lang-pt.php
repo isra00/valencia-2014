@@ -8,7 +8,7 @@ $msg['chrome_frame']	= 'Está a usar um navegador <strong>desatualizado</strong>
 
 $msg['title']			= 'Encontro vocacional do Caminho Neocatecumenal';
 $msg['subtitle_start']	= '1 de junho';
-$msg['intro_text']		= 'Veja em vivo o <strong>encontro de jovens e famílias</strong> em Valencia com iniciadores os iniciadores e responsáveis do Caminho Neocatecumenal.';
+$msg['intro_text']		= 'Veja em vivo o <strong>encontro de jovens e famílias</strong> em Valencia com os iniciadores e responsáveis do Caminho Neocatecumenal.';
 
 $msg['streaming_help']	= '¿Não pode ver o vídeo corretamente? <a href="">Click aquí</a>.';
 
