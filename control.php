@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL);
+
 define('CONFIG_FILE', 'config.json');
 define('CACHE_KEY',	'vlc2014-config');
 
@@ -29,7 +31,9 @@ function form_select($nombre, $opciones, $seleccionada=null, $atributos=null, $p
         $salida .= ' id="' . str_replace('--', '-', str_replace(array('[', ']'), '-', $nombre)) . '"';
         if (is_array($atributos) && count($atributos)) {
             foreach ($atributos as $n => $valor) {
-                $salida .= ' ' . $n . '="' . $valor . '"';
+            	if (is_string($valor)) {
+	                $salida .= ' ' . $n . '="' . $valor . '"';
+	            }
             }
         }
 
@@ -85,7 +89,7 @@ function generate_input($name, $value, $type, $attributes)
 			$output .= " value='$value'";
 			break;
 
-		case 'button':
+		case ($type == 'button' || $type == 'submit'):
 			$output .= " value='$value'";
 			foreach ($attributes as $key=>$val) {
 				$output .= " $key=\"$val\"";
@@ -116,7 +120,7 @@ $directives = array(
 	),
 	'finish_now'				=> array(
 		'description'	=> 'Terminar el encuentro ahora',
-		'type'			=> 'button',
+		'type'			=> 'submit',
 		'value'			=> 'Terminar ahora mismo (!)', 
 		'attributes'	=> array(
 			'type'		=> 'submit', 
@@ -138,9 +142,10 @@ $directives = array(
 	)
 );
 
-$saved = false;
+$save = false;
+$error_date = false;
 
-if (isset($_POST['sent']))
+if (!empty($_POST))
 {
 	$directives_to_store = array();
 
@@ -163,11 +168,25 @@ if (isset($_POST['sent']))
 		$directives_to_store[$code] = $value_to_store;
 	}
 
-	$json = json_encode($directives_to_store);
-	$json = str_replace(array(',"', '{', '}', '":'), array(",\n\"", "{\n", "\n}", '": '), $json);
-	$current_config = file_put_contents(CONFIG_FILE, $json);
-	apc_clear_cache('user');
-	$saved = true;
+	$save = true;
+
+	if (isset($_POST['finish_now']))
+	{
+		if (strtotime($directives_to_store['event_start']) > time())
+		{
+			$error_date = true;
+			$save = false;
+		} else {
+			$directives_to_store['event_end'] = date('Y-m-d H:i:s');
+		}
+	}
+
+	if ($save) {
+		$json = json_encode($directives_to_store);
+		$json = str_replace(array(',"', '{', '}', '":'), array(",\n\"", "{\n", "\n}", '": '), $json);
+		$current_config = file_put_contents(CONFIG_FILE, $json);
+		apc_clear_cache('user');
+	}
 }
 
 $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
@@ -189,8 +208,12 @@ $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 	<div class="container">
 		<h1>Control del streaming</h1>
 
-		<?php if ($saved) : ?>
+		<?php if ($save) : ?>
 		<div class="alert alert-success" onclick="this.style.display='none'">Cambios guardados correctamente</div>
+		<?php endif ?>
+
+		<?php if ($error_date) : ?>
+		<div class="alert alert-danger" onclick="this.style.display='none'">¡No se puede terminar antes de haber empezado!</div>
 		<?php endif ?>
 
 		<form method="post" action="<?php echo $_SERVER['REQUEST_URI'] ?>">
@@ -201,7 +224,7 @@ $current_config = json_decode(file_get_contents(CONFIG_FILE), true);
 						<h4><?php echo $d['description'] ?><small><?php echo $code ?></small></h4>
 					</td>
 					<td>
-						<?php echo generate_input($code, isset($d['value']) ? $d['value'] : $current_config[$code], $d['type'], $d['attributes']) ?>
+						<?php echo generate_input($code, isset($d['value']) ? $d['value'] : $current_config[$code], $d['type'], (isset($d['attributes']) ? $d['attributes'] : null)) ?>
 					</td>
 				</tr>
 			<?php endforeach ?>
