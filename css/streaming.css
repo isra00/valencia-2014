@@ -276,15 +276,15 @@ header {
 			}
 
 		.channels .tvmediterraneo {
-			background: url(../img/tv-mediterraneo-off.gif) left top no-repeat;
+			background: url(../img/tv-mediterraneo-off.png) left top no-repeat;
 			width: 100px;
 			height: 68px;
 		}
 			.channels .tvmediterraneo:hover {
-				background-image: url(../img/tv-mediterraneo.gif);
+				background-image: url(../img/tv-mediterraneo.png);
 			}
 		.channels .populartv {
-			background: url(../img/tv-popular-off.gif) left top no-repeat;
+			background: url(../img/tv-popular-off.png) left top no-repeat;
 			width: 79px;
 			height: 68px;
 		}
