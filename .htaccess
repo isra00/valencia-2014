@@ -10,3 +10,18 @@
     RewriteRule incontro-vocazionale-cammino-neocatecumenale-valencia-2014 /valencia-2014/index.php?lang=it [L]
     RewriteRule rencontre-vocationelle-chemin-neocatechumenal-valence-2014 /valencia-2014/index.php?lang=fr [L]
 </IfModule>
+
+<ifmodule mod_expires.c>
+    <Filesmatch "\.(jpg|jpeg|png|gif|js|css|swf|ico|mp3|eot|otf|ttf|woff)$">
+        ExpiresActive on
+        ExpiresDefault "access plus 1 year"
+    </Filesmatch>
+
+    <Filesmatch "\.(css)$">
+        ExpiresActive on
+        ExpiresDefault "access plus 1 day"
+    </Filesmatch>
+
+    Header unset ETag
+    FileETag None
+</ifmodule>
