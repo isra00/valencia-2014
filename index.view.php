@@ -8,6 +8,7 @@
     <title><?php echo $msg['page_title'] ?></title>
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" media="(min-width: 55em)" href="<?php echo ROOT ?>/css/fonts.min.css">
     <link rel="stylesheet" href="<?php echo ROOT ?>/css/normalize.main.min.css">
     <link rel="stylesheet" href="<?php echo ROOT ?>/css/streaming.css">
 

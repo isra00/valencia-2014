@@ -12,14 +12,14 @@
 </IfModule>
 
 <ifmodule mod_expires.c>
-    <Filesmatch "\.(jpg|jpeg|png|gif|js|css|swf|ico|mp3|eot|otf|ttf|woff)$">
+    <Filesmatch "\.(jpg|jpeg|png|gif|js|swf|ico|mp3|eot|otf|ttf|woff)$">
         ExpiresActive on
         ExpiresDefault "access plus 1 year"
     </Filesmatch>
 
     <Filesmatch "\.(css)$">
         ExpiresActive on
-        ExpiresDefault "access plus 1 day"
+        ExpiresDefault "access plus 1 month"
     </Filesmatch>
 
     Header unset ETag
