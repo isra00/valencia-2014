@@ -193,15 +193,29 @@
                 htmlLocalTime.innerHTML = "<?php echo $msg['local_time'] ?>" + eventTimeUtc.getHours() + ":" + minutes + ".";
             }
         }
-
     }
+
+    /**
+     * Tracks an Analytics event if the page loaded because of a message
+     */
+    Streaming.eventTracking = function()
+    {
+        if (window.location.hash)
+        {
+            alert("Enviando evento");
+            ga('send', 'event', 'messages', 'reload', window.location.hash);
+        }
+    }
+
 
     $(function() {
         Streaming.writeLocalStartTime();
 
-        <?php if ($config['enable_messages']) : ?>
+<?php if ($config['enable_messages']) : ?>
+        Streaming.eventTracking();
         setInterval(Streaming.checkForMessage, 30*1000);
-        <?php endif ?>
+<?php endif ?>
+
     });
     </script>
 
