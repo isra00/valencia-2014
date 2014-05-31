@@ -202,7 +202,6 @@
     {
         if (window.location.hash)
         {
-            alert("Enviando evento");
             ga('send', 'event', 'messages', 'reload', window.location.hash);
         }
     }
