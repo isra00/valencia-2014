@@ -111,7 +111,7 @@ function generate_input($name, $value, $type, $attributes)
 function write_message_reload()
 {
 	file_put_contents("message.json", json_encode(array(
-		'id'		=> time(),
+		'id'		=> time() . (($_POST['message_id']) ? '-' . $_POST['message_id'] : ''),
 		'action'	=>'reload'
 	)));
 }
@@ -137,6 +137,10 @@ $directives = array(
 			'type'		=> 'submit', 
 			'class' 	=> 'btn btn-danger'
 		),
+	),
+	'message_id'		=> array(
+		'description'	=> 'Identificador del mensaje',
+		'type'			=> 'text',
 	),
 	'send_reload'		=> array(
 		'description'	=> '<span class="glyphicon glyphicon-refresh"></span> Hacer que los clientes recarguen la página',
@@ -239,6 +243,7 @@ if (!empty($_POST))
 	if (isset($_POST['remove_message']))
 	{
 		file_put_contents("message.json", "");
+		$directives_to_store['message_id'] = '';
 	}
 
 	if ($save)
@@ -260,7 +265,7 @@ if (empty($message))
 else
 {
 	$message = "<pre>$message</pre>"
-			 . "enviado: " . date('Y-m-d H:i:s', json_decode($message, true)['id']);
+			 . "enviado: " . date('Y-m-d H:i:s', intval(json_decode($message, true)['id']));
 }
 
 ?>
