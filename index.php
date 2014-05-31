@@ -83,4 +83,10 @@ $show = array(
 $time_offset_friendly = (TIME_OFFSET < 0 ? '+' : '') . intval(TIME_OFFSET * (-1) / 60);
 $time_offset_friendly .= (abs(TIME_OFFSET) % 60 != 0) ? ":" . abs(TIME_OFFSET) % 60 : '';
 
+if ($show['player'] && 'redirect' == $config['player'])
+{
+	header('Location: ' . $config['external_url'], true, 302);
+	die;
+}
+
 include 'index.view.php';

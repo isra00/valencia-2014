@@ -3,6 +3,7 @@
 "event_start": "2014-06-01 17:00:00",
 "event_end": "2014-06-01 19:30:00",
 "livestream_event": "2248210",
-"player": "livestream",
-"enable_messages": false
+"external_url": "https:\/\/new.livestream.com\/neocatechumenaleiter\/encuentro-valencia-2014",
+"player": "redirect",
+"enable_messages": true
 }

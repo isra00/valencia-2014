@@ -1,6 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
+ini_set("display_errors", true);
 
 /** @todo Eliminar este código duplicado con un init.php */
 define('CONFIG_FILE', 'config.json');
@@ -116,19 +117,19 @@ function write_message_reload()
 }
 
 $directives = array(
-	'general_disable'			=> array(
+	'general_disable'	=> array(
 		'description'	=> '<span class="glyphicon glyphicon-ban-circle"></span> Desactivar todo el streaming (incluye recarga)',
 		'type'			=> 'checkbox'
 	),
-	'event_start'				=> array(
+	'event_start'		=> array(
 		'description'	=> 'Inicio del evento (hora local)',
 		'type'			=> 'text'
 	),
-	'event_end'					=> array(
+	'event_end'			=> array(
 		'description'	=> 'Fin del evento (hora local)',
 		'type'			=> 'text'
 	),
-	'finish_now'				=> array(
+	'finish_now'		=> array(
 		'description'	=> '<span class="glyphicon glyphicon-off"></span> Terminar el encuentro ahora (incluye recarga)',
 		'type'			=> 'submit',
 		'value'			=> 'Terminar ahora mismo (!)', 
@@ -155,15 +156,21 @@ $directives = array(
 			'class' 	=> 'btn btn-warning'
 		),
 	),
-	'livestream_event'			=> array(
+	'livestream_event'	=> array(
 		'description'	=> 'ID del evento en Livestream',
 		'type'			=> 'text'
 	),
-	'player'					=> array(
+	'external_url'			=> array(
+		'description'	=> 'URL externa del evento',
+		'type'			=> 'text',
+	),
+	/** @todo Validar: no se puede elegir redirect si el campo external_url es inválido o vacío */
+	'player'			=> array(
 		'description'	=> 'Reproductor',
 		'type'			=> 'select',
 		'attributes'	=> array( 'options' => array(
 			'livestream'	=> 'Livestream',
+			'redirect'		=> 'Externo (redirección)',
 			'mediterraneo'	=> 'MediterraneoTV'	
 		) )
 	),
