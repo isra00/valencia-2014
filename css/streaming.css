@@ -116,6 +116,20 @@ header {
 	text-align: center;
 	font-size: 1.2em;
 }
+.diferido {
+	margin-top: 2em;
+}
+	.diferido a {
+		padding: 10px 10px 10px 50px;
+		border: 1px solid silver;
+		border-radius: .5em;
+		text-decoration: none;
+		font-weight: bold;
+		background: url(../img/camera.png) 10px 7px no-repeat;
+	}
+		.diferido a:hover {
+			background-color: white;
+		}
 
 .down {
 	overflow: hidden;

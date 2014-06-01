@@ -15,6 +15,7 @@ $msg['streaming_help']	= 'Não está conseguindo visualizar o vídeo corretament
 $msg['not_yet_title']	= 'A transmissão começará no domingo, 1º de junho ás 17:00, horário de Espanha';
 $msg['local_time']		= 'Em seu horário local será as ';
 $msg['finished']		= 'O Encontro terminou';
+$msg['watch_dvr']		= 'Assistir á gravaç&atilde;o';
 $msg['unavailable']		= 'A transmissão não está disponível neste momento. Desculpe.';
 
 $msg['other_media']		= 'Outros meios que também farão a transmissão do Encontro';

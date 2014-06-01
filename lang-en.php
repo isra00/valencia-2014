@@ -15,6 +15,7 @@ $msg['streaming_help']	= 'Having trouble viewing the video? <a href="">Click her
 $msg['not_yet_title']	= 'The transmission will start on June 1st at 17:00 PM local Spanish time';
 $msg['local_time']		= 'In your local time zone, the time will be ';
 $msg['finished']		= 'The meeting has finished.';
+$msg['watch_dvr']		= 'Watch recording';
 $msg['unavailable']		= 'The stream is not available at this time. We apologize for any inconvenience.';
 
 $msg['other_media']		= 'Other media broadcasting the event';

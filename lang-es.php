@@ -15,6 +15,7 @@ $msg['streaming_help']	= '¿No puede ver el vídeo correctamente? <a href="">Hag
 $msg['not_yet_title']	= 'La retransmisión comenzará el <strong>DOMINGO 1 DE JUNIO</strong> a las 17:00, hora de España';
 $msg['local_time']		= 'En su hora local serán las ';
 $msg['finished']		= 'El encuentro ha terminado';
+$msg['watch_dvr']		= 'Ver en diferido';
 $msg['unavailable']		= 'La retransmisión no está disponible en estos momentos. Disculpe las molestias.';
 
 $msg['other_media']		= 'El Encuentro Vocacional en otros medios';

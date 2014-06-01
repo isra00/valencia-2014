@@ -92,6 +92,7 @@
             <?php if ($show['finished']) : ?>
             <div class="warning finished" id="finished">
                 <?php echo $msg['finished'] ?>
+                <p class="diferido"><a href="<?php echo $config['external_url'] ?>"><?php echo $msg['watch_dvr'] ?></a></p>
             </div>
             <?php endif ?>
 
