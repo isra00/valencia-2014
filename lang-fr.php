@@ -15,6 +15,7 @@ $msg['streaming_help']	= 'Vous ne pouvez pas voir la vidéo correctement? <a hre
 $msg['not_yet_title']	= 'La retransmission commencera le 1er juin à 17h, heure espagnole.';
 $msg['local_time']		= 'votre heure local sera ';
 $msg['finished']		= 'La Rencontre est terminée';
+$msg['watch_dvr']		= 'Watch recording';
 $msg['unavailable']		= 'La retransmission n’est pas disponible pour le moment. Désolé pour le désagrément.';
 
 $msg['other_media']		= 'Les autres médias qui transmettent aussi la rencontré';
